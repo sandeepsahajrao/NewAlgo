@@ -1,0 +1,154 @@
+*{
+  font-family: 'Open Sans', sans-serif;
+    color: white;
+  
+}
+
+.linkr1,.linkr2,.linkr3,.linkr4{
+    width: auto;
+    height: 40px;
+    font: 16px;
+    font-weight: 600;
+    padding: 0px 15px 0px 15px;
+}
+
+.linkr1:hover,.linkr2:hover,.linkr3:hover,.linkr4:hover{
+    background-color: #001528;
+}
+
+
+
+.resize{
+    background-color: #001528;
+}
+
+
+.reflex-container.vertical > .reflex-splitter {
+    border-left: 1px solid #15314b !important;
+    border-right: 1px solid #15314b !important;
+    cursor: col-resize;
+    height: 100%;
+    width: 17px !important;
+    /* background-color:#15314b !important; */
+    background-color:#02203c!important;
+}
+.reflex-container.vertical > .reflex-splitter:hover{
+    background-color: #626ee3 !important;
+}
+.bottom div{
+    word-wrap: break-word;
+}
+
+
+/* Demo Component */
+.horizontal > .reflex-splitter {
+    /* border-bottom: 1px solid #15314b;
+    border-top: 1px solid #15314b; */
+    cursor: row-resize;
+    width: 100%;
+    height: 17px !important;
+    /* background-color: #15314b; */
+    background-color:#02203c!important;
+}
+
+.horizontal > .reflex-splitter:hover{
+    background-color: #626ee3 !important;
+}
+  i{
+    font-size: 23px;
+  }
+
+  .btn-submit{
+    background-color: #008529;
+  }
+
+  .runcode{
+    background-color: #0046c7 !important;
+  }
+
+
+  .reflex-container > .reflex-element {
+    position: relative;
+    overflow: auto;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+/* makefun css */
+
+
+/* mainf1 csss */
+::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+
+
+
+.navtab1{
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #15314b;
+  height: 40px;
+  position: fixed;
+  width: 100vw;
+  top: 58px;
+}
+.navtab3{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #15314b;
+  height: 40px;
+  position: fixed !important;
+  width: 100vw;
+  top:58px;
+  z-index: 9999;
+  position: relative;
+} 
+.runbtn{
+  position: absolute !important;
+  left: 42%;
+}
+
+
+/* .navtab3{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #15314b;
+  height: 40px;
+  position: fixed !important;
+  width: 49%;
+  top: 300px;
+}  */
+/* .navtab4{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #15314b;
+  height: 40px;
+  position: fixed !important;
+  width: 47.8%;
+  top:56%;
+}  */
