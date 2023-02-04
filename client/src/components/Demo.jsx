@@ -147,52 +147,7 @@ const Demo = () => {
         <ReflexElement>
           <ReflexContainer orientation='horizontal'>
             <ReflexElement name='appPane'>
-              <Tabs
-                size='md'
-                variant='enclosed'
-                fontSize={"14px"}
-                position={"relative"}
-              >
-                <TabList
-                  bgColor={"#15314b"}
-                  height={40}
-                  justifyContent={"space-between"}
-                  className='navtab3'
-                >
-                  <Tab
-                    _selected={{ color: "white", bg: "var(--compoback)" }}
-                    width={"131px"}
-                    height={"40px"}
-                    _hover={{ bgColor: "var(--hovertab)" }}
-                    bgColor={"#15314b"}
-                    border={"none"}
-                    onClick={() => dispatch3({ type: "fun8" })}
-                  >
-                    YourSolution
-                  </Tab>
-                  <HStack>
-                    <Button
-                      width={"93px"}
-                      height={"40px"}
-                      _hover={{ bgColor: "#0046C7" }}
-                      bgColor={"#003dae"}
-                      border={"none"}
-                      className='runbtn'
-                      onClick={(event) => handelcode(event)}
-                    >
-                      Run Code
-                    </Button>
-                  </HStack>
-                </TabList>
-                <TabPanels>
-                  <TabPanel>
-                    <Container className='bottom'>
-                      {/* code editor */}
-                      {state3}
-                    </Container>
-                  </TabPanel>
-                </TabPanels>
-              </Tabs>
+            <Yoursolution></Yoursolution>
             </ReflexElement>
 
             <ReflexSplitter />

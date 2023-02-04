@@ -137,7 +137,7 @@ const Loginpage = ({open,setopen}) => {
 
                         <Loginboxwarpper >
                             <Typography variant='h5' sx={{color:'black'}}>Sign-Up</Typography>
-                            <TextField onChange={(e)=> inpubox(e)} style={{width: '100%',margin:'6px 0px'}} label="Enter your First name" variant="standard" name='FirstName'/>
+                            <TextField onChange={(e)=> inpubox(e)} style={{width: '100%',margin:'6px 0px'}} label="Enter your First name" variant="standard" name='FirstName' required/>
                             <TextField onChange={(e)=> inpubox(e)} style={{width: '100%',margin:'6px 0px'}} label="Enter your last name" variant="standard" name='LastName'/>
                             <TextField onChange={(e)=> inpubox(e)} style={{width: '100%',margin:'6px 0px'}} label="Enter your User name" variant="standard" name='UserName'/>
                             <TextField onChange={(e)=> inpubox(e)} style={{width: '100%',margin:'6px 0px'}} label="Enter your Email" variant="standard" name='Email'/>

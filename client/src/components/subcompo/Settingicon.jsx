@@ -28,6 +28,7 @@ import {btntheme,Font1,editorthem,editorkey,btnonff}from '../reducers/Btnc';
 import { useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Font3 } from '../../Redux/FontSlice';
+import codethem from '../../Redux/codethem';
 
 const Settingicon = () => {
 
@@ -47,6 +48,7 @@ const Settingicon = () => {
 
   const Dispatch=useDispatch()
   const Font3s=useSelector((state)=>state.FontSlice)
+
 
   return (
     <>
@@ -105,17 +107,17 @@ const Settingicon = () => {
             <Box className='boxst'>
             <NavDropdown title={editor} id="basic-nav-dropdown" className='settinglink'>
                 
-                <NavDropdown.Item href="#action/3.2" className='droplink' onClick={()=>dispatche({type:'Monokai'})}>
+                <NavDropdown.Item href="#action/3.2" className='droplink' onClick={()=>{Dispatch(codethem('monokai'))}}>
 
                   Monokai
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.4" className='droplink' onClick={()=>dispatche({type:'One Dark'})}>
+                <NavDropdown.Item href="#action/3.4" className='droplink' onClick={()=>{Dispatch(codethem("One Dark"))}}>
                   One Dark
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.4" className='droplink' onClick={()=>dispatche({type:'Material'})}>
+                <NavDropdown.Item href="#action/3.4" className='droplink' onClick={()=>{Dispatch(codethem('Material'))}}>
                   Material
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.4" className='droplink' onClick={()=>dispatche({type:'Dracula'})}>
+                <NavDropdown.Item href="#action/3.4" className='droplink' onClick={()=>{Dispatch(codethem("Dracula"))}}>
                   Dracula
                 </NavDropdown.Item>
               </NavDropdown>

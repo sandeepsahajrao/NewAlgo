@@ -100,16 +100,15 @@
 
 
 .navtab1{
-
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   background-color: #15314b;
   height: 40px;
-  position: fixed;
-  width: 100vw;
-  top: 58px;
+  position: sticky !important;
+  width: 100%;
+  top: 0px;
 }
 .navtab3{
   display: -webkit-box;
@@ -118,37 +117,15 @@
   display: flex;
   background-color: #15314b;
   height: 40px;
-  position: fixed !important;
-  width: 100vw;
-  top:58px;
+  position: sticky !important;
+  width: 100%;
+  top:0px;
   z-index: 9999;
-  position: relative;
 } 
+
+
+
 .runbtn{
   position: absolute !important;
-  left: 42%;
+  right: 0px;
 }
-
-
-/* .navtab3{
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  background-color: #15314b;
-  height: 40px;
-  position: fixed !important;
-  width: 49%;
-  top: 300px;
-}  */
-/* .navtab4{
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  background-color: #15314b;
-  height: 40px;
-  position: fixed !important;
-  width: 47.8%;
-  top:56%;
-}  */
