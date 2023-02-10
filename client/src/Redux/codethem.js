@@ -1,14 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
-const CodeTheme=createSlice({
-    name:'codeTheme',
-    initialState:'Monokai',
+const initialState="terminal"
+const ThemFontSlice=createSlice({
+    name:"ThemFontSlice1",
+    initialState,
     reducers:{
-        codethem(state,action){
-            return action.payload;
+        ThemFont3(state,action){
+            return action.payload
         }
     }
-
 });
 
-export const {codethem}=CodeTheme.actions;
-export default CodeTheme.reducer
+
+export const {ThemFont3}=ThemFontSlice.actions;
+export default ThemFontSlice.reducer
+// export default CodeSlice.reducer

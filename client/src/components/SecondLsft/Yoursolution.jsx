@@ -22,12 +22,19 @@ import {
 } from "@chakra-ui/react";
 
 import { useDispatch, useSelector } from "react-redux";
+import { writecode } from "../../services/api";
+import { writecode_run } from "../../Redux/writecode";
 
-
+const submitcode_obj={
+  language:'',
+  writecode:''
+}
 const Yoursolution = () => {
- const Codethem=useSelector((state)=>state.CodeThem)
+ const Codename=useSelector((state)=>state.ThemFont3)
   const Font3s = useSelector((state) => state.FontSlice);
   const lang = useSelector((state) => state.Selectlang1);
+  const [submitcode,setsubmitcode]=useState(submitcode_obj);
+  const Dispath=useDispatch()
 
   const Dispatch = useDispatch();
 
@@ -42,8 +49,21 @@ const Yoursolution = () => {
     // Dispatch(codeAdd(newCode));
   };
 
-  const handelruncode = () => {
-    console.log(code);
+  const handelruncode = async() => {
+    let obj={
+      language:lang,
+      writecode:code
+
+    }
+    await writecode(obj);
+
+    // wait for actio
+    setsubmitcode({
+      language:lang,
+      writecode:code
+    })
+    Dispatch(writecode_run({ language: lang, writecode: code }));
+
   };
 
   return (
@@ -75,7 +95,7 @@ const Yoursolution = () => {
                 bgColor={"#003dae"}
                 border={"none"}
                 className='runbtn'
-                onClick={handelruncode}
+                onClick={()=>handelruncode(code)}
               >
                 Run Code
               </Button>
@@ -89,7 +109,8 @@ const Yoursolution = () => {
                   // ref={editorRef}
                   placeholder={`Write your code here ${lang}`}
                   mode={lang}
-                  theme={Codethem}
+                  theme={Codename}
+                  // theme="monokai"
                   name='blah2'
                   // onKeyDown={handleBackspace}
                   onChange={handleChange}

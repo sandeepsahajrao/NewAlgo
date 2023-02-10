@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-const initialState=14
+const initialState=12
 const FontSlice=createSlice({
     name:"FontSlice1",
     initialState,

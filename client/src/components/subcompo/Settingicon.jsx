@@ -28,7 +28,7 @@ import {btntheme,Font1,editorthem,editorkey,btnonff}from '../reducers/Btnc';
 import { useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Font3 } from '../../Redux/FontSlice';
-import codethem from '../../Redux/codethem';
+import { ThemFont3 } from '../../Redux/codethem';
 
 const Settingicon = () => {
 
@@ -42,10 +42,11 @@ const Settingicon = () => {
   const [changecolor,dispatch]=useReducer(btntheme,initial);
   const [offcolor,dispatchc]=useReducer(btnonff,initialc);
   // const [changecolor1,dispatch1]=useReducer(btntheme1,initial);
-
+  const themchanger=useSelector((state)=>state.ThemFont3)
+  console.log(themchanger)
   const [editor,dispatche]=useReducer(editorthem,inieditor);
   const [editorkey1,dispatchkey]=useReducer(editorkey,inieditorkey);
-
+  const Codename=useSelector((state)=>state.ThemFont3)
   const Dispatch=useDispatch()
   const Font3s=useSelector((state)=>state.FontSlice)
 
@@ -105,20 +106,18 @@ const Settingicon = () => {
             </Box>
             <Box className='boxst2'>Editor Theme</Box>
             <Box className='boxst'>
-            <NavDropdown title={editor} id="basic-nav-dropdown" className='settinglink'>
-                
-                <NavDropdown.Item href="#action/3.2" className='droplink' onClick={()=>{Dispatch(codethem('monokai'))}}>
-
-                  Monokai
+            <NavDropdown title={Codename} id="basic-nav-dropdown" className='settinglink'>
+                <NavDropdown.Item href="#action/3.2" className='droplink' onClick={()=>{Dispatch(ThemFont3("monokai"))}}>
+                Monokai
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.4" className='droplink' onClick={()=>{Dispatch(codethem("One Dark"))}}>
-                  One Dark
+                <NavDropdown.Item href="#action/3.4" className='droplink' onClick={()=>{Dispatch(ThemFont3("solarized_light"))}}>
+                Solarized_light
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.4" className='droplink' onClick={()=>{Dispatch(codethem('Material'))}}>
-                  Material
+                <NavDropdown.Item href="#action/3.4" className='droplink' onClick={()=>{Dispatch(ThemFont3("twilight"))}}>
+                Twilight
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.4" className='droplink' onClick={()=>{Dispatch(codethem("Dracula"))}}>
-                  Dracula
+                <NavDropdown.Item href="#action/3.4" className='droplink' onClick={()=>{Dispatch(ThemFont3("github"))}}>
+                  Github
                 </NavDropdown.Item>
               </NavDropdown>
             </Box>

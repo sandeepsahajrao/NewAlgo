@@ -11,7 +11,7 @@ const Question = () => {
     <Container>
         <Qnav></Qnav>
         <Details></Details>
-        <LastSection></LastSection>
+        {/* <LastSection></LastSection> */}
     </Container>
   )
 }

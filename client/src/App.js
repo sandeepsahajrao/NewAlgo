@@ -19,8 +19,8 @@ const App = () => {
             {/* <Demo></Demo> 
           <AlgoNav /> */}
             <Routes>
-              <Route path="/" element={<Demo></Demo>} />
-              <Route path="/question" element={<Question />} />
+              <Route path="/" element={<Question />} />
+              <Route path="/code" element={<Demo></Demo>} />
               {/* <Route path="*" element={<NoPage />} /> */}
             </Routes>
           </BrowserRouter>
