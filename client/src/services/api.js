@@ -15,7 +15,7 @@ export const authenticateSignup = async (signupdata1) => {
 
 export const authenticatelogin = async (logindata) => {
     try {
-        return await axios.post(`${url}/users`, logindata);
+        return await axios.post(`${url}/users/login`, logindata);
         // return await axios.post(url, logindata);
     } catch (error) {
         console.log(error)

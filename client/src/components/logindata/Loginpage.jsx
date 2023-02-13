@@ -95,20 +95,22 @@ const Loginpage = ({open,setopen}) => {
     }
 
     // handel login function onchange function by uisng onClick 
-    const handelinput4=async(login_click)=>{
-        // window.location.pathname='../Demo.jsx'
-        window.location.href='../Demo.jsx'
-        const logindata=await authenticatelogin(login_click);
-        console.log(login_click)
-        console.log(logindata)
+    const handelinput4 = async (login_click) => {
 
-        // if(logindata.status===200){
-        //     console.log(`${logindata.data.UserName} logged In Successfully`)
-        // }
-        handleClose()
-        Dispatch(toggleloginame({name:logindata.data.UserName,Boolean1:true
-        }))
-    }
+      
+      const logindata = await authenticatelogin(login_click);
+      // console.log(login_click)
+      console.log(logindata.data.user.Email);
+      if(logindata.status===200){
+          console.log(`${logindata.data.UserName} logged In Successfully`)
+
+              
+      }
+      handleClose();
+      Dispatch(
+        toggleloginame({ name: logindata.data.user.UserName, Boolean1: true })
+      );
+    };
 
 
     const handelacclounttogle=()=>{
@@ -154,7 +156,7 @@ const Loginpage = ({open,setopen}) => {
                             <Typography variant='h5' sx={{color:'black'}}>Sign-In</Typography>
                             <TextField onChange={(e)=> loginuser(e)} style={{width: '100%',margin:'6px 0px'}} label="Enter your Email" variant="standard" name='Email'/>
                             <TextField onChange={(e)=> loginuser(e)} style={{width: '100%',margin:'6px 0px'}} label="Enter your Password" variant="standard" name='Password'/>
-                            <Button variant="outlined" type='button'href="/code"   sx={{color:'red',margin:'20px 0px',width:'100%'}} onClick={()=>handelinput4(login_click)}>LogIn</Button>
+                            <Button variant="outlined" type='button' href='/code'  sx={{color:'red',margin:'20px 0px',width:'100%'}} onClick={()=>handelinput4(login_click)}>LogIn</Button>
                             <Typography> Don't have account <Typography variant= 'span' sx={{color:'blue',cursor:'pointer'}} onClick={handelacclounttogle}>Create Accont</Typography>
                             </Typography>
                         </Loginboxwarpper>
