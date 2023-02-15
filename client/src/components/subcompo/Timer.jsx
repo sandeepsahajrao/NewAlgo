@@ -1,5 +1,6 @@
 import React from 'react';
-import { Box, IconButton, useDisclosure } from '@chakra-ui/react';
+import Stopwatch from './Timer2';
+import { Box, Container, IconButton, useDisclosure } from '@chakra-ui/react';
 import './timer.css'
 import {
     AlertDialog,
@@ -18,24 +19,24 @@ const Timer = () => {
   
     return (
       <>
-  
+      <Container width={'200px'} >
+
         <AlertDialog
           motionPreset='slideInBottom'
           leastDestructiveRef={cancelRef}
           onClose={onClose}
           isOpen={isOpen}
           isCentered
-          
+         
           
         >
           <AlertDialogOverlay  />
   
-          <AlertDialogContent width={'200px'}>
-            <AlertDialogHeader>Discard Changes?</AlertDialogHeader>
+          <AlertDialogContent width={'200px'}  className='timer1'>
+            <AlertDialogHeader>Set Time</AlertDialogHeader>
             <AlertDialogCloseButton />
             <AlertDialogBody>
-              Are you sure you want to discard all of your notes? 44 words will be
-              deleted.
+              <Stopwatch></Stopwatch>
             </AlertDialogBody>
             <AlertDialogFooter>
               <Button ref={cancelRef} onClick={onClose}>
@@ -53,6 +54,7 @@ const Timer = () => {
                 <i className="fa-solid fa-clock"></i>
                 <span>00:00:00</span>
             </Box>
+      </Container>
       </>
     )
 }

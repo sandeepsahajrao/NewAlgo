@@ -63,7 +63,7 @@ function AlgoNav() {
               <Nav.Link href="#link" className='link4'><i className="fa-sharp fa-solid fa-share-nodes"></i></Nav.Link>
       
 
-                  <Timer></Timer>
+                  {/* <Timer></Timer> */}
             
             </Nav>
             <Nav className='n2'>
