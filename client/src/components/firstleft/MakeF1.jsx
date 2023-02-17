@@ -1,4 +1,5 @@
-import {  Container, HStack, Text,Box } from '@chakra-ui/react'
+import {  Container, HStack, Text,Box, Button } from '@chakra-ui/react'
+// import { getdatadb } from '../../services/api2'
 import {
   Accordion,
   AccordionItem,
@@ -8,8 +9,11 @@ import {
 } from '@chakra-ui/react'
 import React from 'react'
 import './makef1.css'
-
 const MakeF1 = () => {
+  // let id=1
+  // const clickme=()=>{
+  //   getdatadb(id)
+  // }
   return (
     <Container width={'100%'} flexWrap={'wrap'} mt={'50px'}>
       {/* overflow={'hidden'} add whenever needed */}
@@ -112,8 +116,11 @@ const MakeF1 = () => {
             </AccordionPanel>
           </AccordionItem>
 
-
+        
         </Accordion>
+        <Button >
+          clickme
+        </Button>
       </Box>
   
     </Container>

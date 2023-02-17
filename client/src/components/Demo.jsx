@@ -31,9 +31,10 @@ import { useDispatch, useSelector } from "react-redux";
 // import { darklight } from '../Redux/Workspaceslice';
 // import { useSelector } from 'react-redux';
 // import AceEditor from "react-ace";
-
+import CodePage from "./TestingAPi";
 const Demo = () => {
-  const initialValue = <MakeF1></MakeF1>;
+  // const initialValue = <MakeF1></MakeF1>;
+  const initialValue = <CodePage></CodePage>;
   const initialValue2 = <Test></Test>;
   const initialValue3 = <Yoursolution></Yoursolution>;
   const initialValue4 = <Customop></Customop>;
@@ -41,6 +42,7 @@ const Demo = () => {
   const [state2, dispatch2] = useReducer(Handelstate2, initialValue2);
   const [state3, dispatch3] = useReducer(Handelstate3, initialValue3);
   const [state4, dispatch4] = useReducer(Handelstate4, initialValue4);
+
   // const coderun=useSelector((state)=>state.CodeSlice);
   const Code = useSelector((state) => state.CodeSlice);
   const [code1, setcode1] = useState("");

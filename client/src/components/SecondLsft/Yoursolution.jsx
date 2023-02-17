@@ -33,19 +33,19 @@ const Yoursolution = () => {
  const Codename=useSelector((state)=>state.ThemFont3)
   const Font3s = useSelector((state) => state.FontSlice);
   const lang = useSelector((state) => state.Selectlang1);
+  const codeDefination = useSelector((state) => state.codebyid);
   const [submitcode,setsubmitcode]=useState(submitcode_obj);
   const Dispath=useDispatch()
-
+  console.log(codeDefination)
   const Dispatch = useDispatch();
 
   // get code and update onchange fuction
-  const [code, setCode] = useState("");
+  const [code, setCode] = useState('');
 
   // set value of code
   const handleChange = (newCode) => {
     setCode(newCode);
     // setCode1(code1)
-    setCode(newCode);
     // Dispatch(codeAdd(newCode));
   };
 
@@ -119,7 +119,7 @@ const Yoursolution = () => {
                   showPrintMargin={true}
                   showGutter={true}
                   highlightActiveLine={false}
-                  value={code}
+                  value={codeDefination}
                   setOptions={{
                     enableBasicAutocompletion: true,
                     enableLiveAutocompletion: true,
@@ -129,6 +129,7 @@ const Yoursolution = () => {
                   }}
                   style={{ width: "100%",scrollbarWidth:'0px', backgroundColor: "var(--compoback)" }}
                   className='yoursolution'
+                  readOnly={false} 
                 />
               </Container>
             </TabPanel>

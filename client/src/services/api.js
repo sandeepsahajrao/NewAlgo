@@ -21,6 +21,7 @@ export const authenticatelogin = async (logindata) => {
         console.log(error)
     }
 }
+
 export const writecode = async (codedata) => {
     try {
         return await axios.post(`${url}/write-code`, codedata);
@@ -29,6 +30,8 @@ export const writecode = async (codedata) => {
         console.log(error)
     }
 }
+
+
 export const submitcode = async () => {
     try {
          axios.get(`${url}/write-code`);

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-const initialState='javascript'
+const initialState='Select Language'
 const Selectlang=createSlice({
     name:"Selectlang1",
     initialState,

@@ -14,15 +14,38 @@ import Question from './question/Question';
 // store work 
 import { useDispatch, useSelector } from 'react-redux';
 import { lang1 } from '../Redux/Workspaceslice';
-
+import { getdatadb2 } from '../services/api2';
+import { useEffect } from 'react';
+import { CodeID } from '../Redux/codebyid';
 function AlgoNav() {
-  const Dispatch=useDispatch()
-  const [Lang,setlinks]=useState('javascript')
+  const [data2, setData2] = useState(null);
+  const [langchange, setLang] = useState('Select language');
+  const dispatch = useDispatch();
+  const { FontSlice, Selectlang1: lang } = useSelector((state) => state);
+  const DispatchID=useDispatch()
+  useEffect(() => {
+    if (data2) {
+      data2.map((el) => {
+        if (lang === el.language) {
+          console.log(el.taskCode);
+          DispatchID(CodeID(el.taskCode))
+        }
+      });
+    }
+  }, [data2, lang]);
 
+  const atmid=useSelector((state)=>state.FontSlice)
+  const handleLanguage = async (langCode, langName) => {
+    try {
+      dispatch(lang1(langCode));
+      setLang(langName);
+      const data = await getdatadb2(atmid);
+      setData2(data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
-  const lang=useSelector((state)=>state.Selectlang1)
-  // console.log(lang)
-  
   return (
     <>
 
@@ -35,30 +58,30 @@ function AlgoNav() {
               <Nav.Link href="/question" target={'_parent'} className='link1'><i className="fa-solid fa-bars"></i></Nav.Link>
               <Nav.Link href="https://www.algoexpert.io/questions/river-sizes" className='link2'><i className="fa-solid fa-arrow-right-long"></i></Nav.Link>
               {/* <Nav.Link href="#link" className='link3'>Link</Nav.Link> */}
-              <NavDropdown title={lang} id="basic-nav-dropdown" className='link3'>
+              <NavDropdown title={langchange} id="basic-nav-dropdown" className='link3'>
                 
-                <NavDropdown.Item  className='droplink' onClick={()=>{Dispatch(lang1('typescript'))}}>
-                typescript
-                </NavDropdown.Item>
-               
-                <NavDropdown.Item href="#action/3.4" className='droplink'onClick={()=>{Dispatch(lang1('java'))}}>
-                Java
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.4" className='droplink' onClick={()=>{Dispatch(lang1('python'))}}>
+                <NavDropdown.Item  className='droplink' onClick={() => handleLanguage('py', 'Python')}>
                   Python
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.4" className='droplink' onClick={()=>{Dispatch(lang1('css'))}}>
-                  CSS
+               
+                {/* <NavDropdown.Item href="#action/3.4" className='droplink'onClick={handellanguage1}>
+                JavaScript
+                </NavDropdown.Item> */}
+                <NavDropdown.Item href="#action/3.4" className='droplink'  onClick={() => handleLanguage('ts', 'TypeScript')}>
+                TypeScript
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.4" className='droplink' onClick={()=>{Dispatch(lang1('golang'))}}>
-                  golang
+                <NavDropdown.Item href="#action/3.4" className='droplink'  onClick={() => handleLanguage('cpp', 'C++')}>
+                  C++
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.4" className='droplink'onClick={()=>{Dispatch(lang1('c++'))}}>
-                  c++
+                <NavDropdown.Item href="#action/3.4" className='droplink'  onClick={() => handleLanguage('java', 'Java')}>
+                Java
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.4" className='droplink' onClick={()=>{setlinks('c')}}>
+                <NavDropdown.Item href="#action/3.4" className='droplink'  onClick={() => handleLanguage('csharp', 'C#')}>
+                  C#
+                </NavDropdown.Item>
+                {/* <NavDropdown.Item href="#action/3.4" className='droplink' onClick={()=>{setlinks('c')}}>
                   c
-                </NavDropdown.Item>
+                </NavDropdown.Item> */}
               </NavDropdown>
               <Nav.Link href="#link" className='link4'><i className="fa-sharp fa-solid fa-share-nodes"></i></Nav.Link>
       

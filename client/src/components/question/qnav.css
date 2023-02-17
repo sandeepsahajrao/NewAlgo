@@ -106,11 +106,14 @@
 /* .maingrid div div:hover{
     background-color: aqua !important;
 } */
-
-.itemgrid1 div h3,p,.itemgrid2 div h3,p,.itemgrid3 div h3,p,.itemgrid4 div h3,p,.itemgrid5 div h3,p,.itemgrid6 div h3,p{
-    color: #02203c;
+.itemgrid1 div > h3, .itemgrid1 div > p,
+.itemgrid2 div > h3, .itemgrid2 div > p,
+.itemgrid3 div > h3, .itemgrid3 div > p,
+.itemgrid4 div > h3, .itemgrid4 div > p,
+.itemgrid5 div > h3, .itemgrid5 div > p,
+.itemgrid6 div > h3, .itemgrid6 div > p {
+  color: #02203c;
 }
-
 
 .itemgrid1:hover{
     background-color: aqua !important;
@@ -118,6 +121,7 @@
 .itemgrid1, .itemgrid3, .itemgrid5{
     margin-left: 0px !important;
     padding-left: 0px !important;
+    
 }
 .itemgrid2:hover{
     background-color: rgb(187, 255, 0) !important;

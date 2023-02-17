@@ -3,10 +3,10 @@ import { submitcode } from '../../services/api';
 import { useSelector } from 'react-redux';
 import { writecode } from '../../services/api';
 const Customop = () => {
-  let s= writecode()
-  s.then((res)=>{
-    console.log(res.data)
-  })
+  // let s= writecode()
+  // s.then((res)=>{
+  //   console.log(res.data)
+  // })
 const submitted_code=useSelector((state)=>state.writecode)
   return (
     <>
