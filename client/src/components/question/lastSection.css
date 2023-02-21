@@ -1,0 +1,77 @@
+/* 
+.maintabbox{
+    background-color: rgb(246, 241, 241) !important;
+    color: rgb(0, 0, 0) !important;
+
+} */
+
+.filter{
+    position: absolute;
+    right: 30px;
+    border-radius: 30px !important;
+   
+}
+.maiantab{
+    position: relative;
+    padding: 8px;
+}
+/* #combo-box-demo{
+    background-color: red;
+} */
+
+.questionbox{
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border: 1px solid rgb(68, 147, 227);
+    cursor: pointer;
+    /* background-color: rgba(135, 207, 235, 0.481); */
+
+}
+.questionbox:hover {
+    border: 1px solid rgb(52, 142, 232); /* change the border thickness to 2px */
+    cursor: pointer;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(232,225,232,1);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(232,225,232,1);
+    box-shadow: 10px 10px 5px 0px rgba(232,225,232,1);
+
+    /* -webkit-box-shadow: 10px 10px 5px 0px rgba(204,204,204,1);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(204,204,204,1);
+    box-shadow: 10px 10px 5px 0px rgba(204,204,204,1); */
+  }
+
+.easysumitted{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.easysumitted1{
+    margin-right: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Typography{
+    color: black;
+}
+.Typography1{
+    color: black;
+    width: 50px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;;
+
+}
+/* 
+.Typography:hover{
+    font-size: bold;
+    font-size: 19px;
+
+} */

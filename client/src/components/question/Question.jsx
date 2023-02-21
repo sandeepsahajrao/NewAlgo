@@ -4,15 +4,20 @@ import Details from './Details'
 import LastSection from './LastSection'
 
 import Qnav from './Qnav'
+import './qnav.css'
 
 
 const Question = () => {
   return (
-    <Container>
-        <Qnav></Qnav>
-        <Details></Details>
-        {/* <LastSection></LastSection> */}
-    </Container>
+    <>
+    <div className='mainquestiondiv'>
+
+    <Qnav></Qnav>
+    <Details></Details>
+    <LastSection></LastSection>
+    </div>
+    </>
+
   )
 }
 

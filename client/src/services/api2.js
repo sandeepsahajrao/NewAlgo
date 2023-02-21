@@ -23,3 +23,13 @@ export const getdatadb2= async (id) => {
     console.log(error);
   }
 };
+export const getdatadb3= async () => {
+  try {
+    const response = await axios.get(`${url}/getdb/findAll_task_master`);
+    const data=response.data
+    // console.log(typeof data) objet
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};
