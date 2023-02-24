@@ -1,9 +1,11 @@
 .getidcode{
     margin-top: 20px;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
 .getidcode p{
     margin-top: 20px;
-    font-size: 17px;
+    font-size: 14px;
 }
 .getidcode h3{
     margin-top: 20px;

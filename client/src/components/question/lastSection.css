@@ -1,8 +1,8 @@
-/* 
-.maintabbox{
-    background-color: rgb(246, 241, 241) !important;
-    color: rgb(0, 0, 0) !important;
 
+/* .maintabbox{
+    background-color: rgba(179, 202, 245, 0.515) !important;
+    color: rgb(0, 0, 0) !important;
+    height: fit-content !important;
 } */
 
 .filter{
@@ -13,7 +13,7 @@
 }
 .maiantab{
     position: relative;
-    padding: 8px;
+    padding: 9px;
 }
 /* #combo-box-demo{
     background-color: red;
@@ -24,8 +24,8 @@
     align-items: center;
     padding-left: 30px;
     justify-content: space-between;
-    margin-bottom: 20px;
-    border: 1px solid rgb(68, 147, 227);
+    margin-bottom: 15px;
+    border: 1px solid rgba(128, 128, 128, 0.586);
     cursor: pointer;
     /* background-color: rgba(135, 207, 235, 0.481); */
 
@@ -53,6 +53,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
 }
 
 .Typography{
@@ -60,8 +61,8 @@
 }
 .Typography1{
     color: black;
-    width: 50px;
-    border: 1px solid black;
+    width: 45px;
+    border: 1px solid rgba(128, 128, 128, 0.437);
     border-radius: 5px;
     padding: 5px;
     display: flex;

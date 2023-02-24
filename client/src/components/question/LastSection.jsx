@@ -15,11 +15,12 @@ import "./lastSection.css";
 import QuestionsList from "./QuestionsList";
 
 const LastSection = () => {
-  const no=1
+
   const nobr = useSelector((state) => state.WorkSetting1);
   const [value, setValue] = useState("1");
   const atmid = useSelector((state) => state.FontSlice);
-  const [changestate, setChangestate] = useState(no);
+  const [changestate, setChangestate] = useState(1);
+
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -38,23 +39,23 @@ const LastSection = () => {
     allquestion:5
   }
   const [filter1,setfilename]=useState(obj)
-  const sumbitted=()=>{
-    // window.location.href='http://localhost:3000/code'
+
+  const sumbitted1=()=>{
+    window.location.href='http://localhost:3000/code'
     setChangestate(0);
   }
-  const sumbitted1=()=>{
-    // window.location.href='http://localhost:3000/code'
-    setfilename(obj.easy);
-  }
+  console.log(changestate);
   return (
     <>
       <Box
         sx={{
           width: "100%",
-          height: "100vh",
+          height: "100%",
           backgroundColor: "white",
           color: "red",
           padding: "0px",
+          overflow: "scroll",
+          marginTop:'64px'
         }}
         className='maintabbox'
       >
@@ -93,19 +94,19 @@ const LastSection = () => {
             </div>
           </Box>
           <TabPanel value='1'>
-            <QuestionsList sumbitted1={sumbitted1} filter1={filter1.allquestion}></QuestionsList>
+            <QuestionsList sumbitted1={sumbitted1} filter1={filter1.allquestion} ></QuestionsList>
           </TabPanel>
 
           <TabPanel value='2' >Easy
-            <QuestionsList sumbitted1={sumbitted1} filter1={filter1.easy}></QuestionsList>
+            <QuestionsList sumbitted1={sumbitted1} filter1={filter1.easy}   ></QuestionsList>
           </TabPanel>
 
           <TabPanel value='3' >Medium
-            <QuestionsList sumbitted1={sumbitted1} filter1={filter1.medium}></QuestionsList>
+            <QuestionsList sumbitted1={sumbitted1} filter1={filter1.medium} ></QuestionsList>
           </TabPanel>
 
           <TabPanel value='4' >Hard
-            <QuestionsList sumbitted1={sumbitted1} filter1={filter1.hard}></QuestionsList>
+            <QuestionsList sumbitted1={sumbitted1} filter1={filter1.hard}  ></QuestionsList>
           </TabPanel>
 
           <TabPanel value='5' >Very Hard

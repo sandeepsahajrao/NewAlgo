@@ -12,6 +12,8 @@ import { style } from "@mui/system";
 import "./yoursolution.css";
 import { useEffect } from "react";
 import { codeAdd } from "../../Redux/CodeSlice";
+import { CodeID } from "../../Redux/codebyid";
+
 import {
   Tabs,
   TabList,
@@ -34,19 +36,22 @@ const Yoursolution = () => {
   const Font3s = useSelector((state) => state.FontSlice);
   const lang = useSelector((state) => state.Selectlang1);
   const codeDefination = useSelector((state) => state.codebyid);
+  const codeDefination2 = useSelector((state) => state. writecode);
   const [submitcode,setsubmitcode]=useState(submitcode_obj);
   const Dispath=useDispatch()
-  console.log(codeDefination)
-  const Dispatch = useDispatch();
-
+  console.log(lang)
   // get code and update onchange fuction
-  const [code, setCode] = useState('');
+  const [code, setCode] = useState(codeDefination2.writecode);
+  console.log(codeDefination2.writecode)
 
   // set value of code
   const handleChange = (newCode) => {
     setCode(newCode);
-    // setCode1(code1)
-    // Dispatch(codeAdd(newCode));
+    console.log('New code:', newCode);
+    // dispatch(updateCodeById({ id: props.id, code: newCode }));
+    
+    Dispath(writecode_run({writecode:newCode}));
+    Dispath(CodeID(newCode))
   };
 
   const handelruncode = async() => {
@@ -55,18 +60,19 @@ const Yoursolution = () => {
       writecode:code
 
     }
-    
+ 
     await writecode(obj);
 
-    // wait for actio
+    // wait for action
     setsubmitcode({
       language:lang,
       writecode:code
     })
-    Dispatch(writecode_run({ language: lang, writecode: code }));
+    Dispath(writecode_run({ language: lang, writecode: code }));
 
   };
-
+// console.log(lang);
+// console.log(codeDefination2)
   return (
     <>
 
@@ -108,11 +114,12 @@ const Yoursolution = () => {
                 {/* code editor */}
                 <AceEditor
                   // ref={editorRef}
-                  placeholder={`Write your code here ${lang}`}
-                  mode={lang}
+                  placeholder={`Write your code here ${lang.lang}`}
+                  mode={lang.language}
                   theme={Codename}
                   // theme="monokai"
                   name='blah2'
+
                   // onKeyDown={handleBackspace}
                   onChange={handleChange}
                   // onLoad={onLoad}
@@ -120,7 +127,9 @@ const Yoursolution = () => {
                   showPrintMargin={true}
                   showGutter={true}
                   highlightActiveLine={false}
-                  value={codeDefination}
+      
+                  value={codeDefination2.writecode}
+                  readOnly={false} 
                   setOptions={{
                     enableBasicAutocompletion: true,
                     enableLiveAutocompletion: true,
@@ -130,7 +139,7 @@ const Yoursolution = () => {
                   }}
                   style={{ width: "100%",scrollbarWidth:'0px', backgroundColor: "var(--compoback)" }}
                   className='yoursolution'
-                  readOnly={false} 
+                
                 />
               </Container>
             </TabPanel>

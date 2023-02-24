@@ -7,6 +7,8 @@ import AuthloginSlice from './Authlogin'
 import writecode from "./writecode";
 import  ThemFont3  from "./codethem";
 import codebyid from "./codebyid";
+import tabslice from "./tabslice";
+import attempedquestion from "./attempedquestion";
 const store=configureStore({
     reducer: {
         Selectlang1: Selectlang1,
@@ -15,7 +17,9 @@ const store=configureStore({
         AuthloginSlice: AuthloginSlice,
         ThemFont3: ThemFont3,
         writecode: writecode,
-        codebyid:codebyid
+        codebyid:codebyid,
+        tabslice:tabslice,
+        attempedquestion:attempedquestion
 
     }
 })

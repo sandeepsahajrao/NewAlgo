@@ -17,29 +17,33 @@ import { lang1 } from '../Redux/Workspaceslice';
 import { getdatadb2 } from '../services/api2';
 import { useEffect } from 'react';
 import { CodeID } from '../Redux/codebyid';
+import { writecode_run } from '../Redux/writecode';
 function AlgoNav() {
   const [data2, setData2] = useState(null);
   const [langchange, setLang] = useState('Select language');
   const dispatch = useDispatch();
-  const { FontSlice, Selectlang1: lang } = useSelector((state) => state);
+  const { lang, additionalData } = useSelector((state)=>state.Selectlang1);
   const DispatchID=useDispatch()
   useEffect(() => {
     if (data2) {
       data2.map((el) => {
         if (lang === el.language) {
-          console.log(el.taskCode);
-          DispatchID(CodeID(el.taskCode))
+          let codedefination=el.taskCode;
+          console.log(codedefination)
+          DispatchID(CodeID(codedefination))
+          DispatchID(writecode_run({writecode:codedefination}))
         }
       });
     }
   }, [data2, lang]);
 
   const atmid=useSelector((state)=>state.FontSlice)
-  const handleLanguage = async (langCode, langName) => {
+  const id2 = localStorage.getItem('id1');
+  const handleLanguage = async (langCode, langName,additionalData) => {
     try {
-      dispatch(lang1(langCode));
+      dispatch(lang1({ language: langCode, additionalData: additionalData }))
       setLang(langName);
-      const data = await getdatadb2(atmid);
+      const data = await getdatadb2(id2);
       setData2(data);
     } catch (err) {
       console.log(err);
@@ -60,23 +64,26 @@ function AlgoNav() {
               {/* <Nav.Link href="#link" className='link3'>Link</Nav.Link> */}
               <NavDropdown title={langchange} id="basic-nav-dropdown" className='link3'>
                 
-                <NavDropdown.Item  className='droplink' onClick={() => handleLanguage('py', 'Python')}>
+                <NavDropdown.Item  className='droplink' onClick={() => handleLanguage('py', 'Python','python')}>
                   Python
+                </NavDropdown.Item>
+                <NavDropdown.Item  className='droplink' onClick={() => handleLanguage('js', 'JavaScript','javascript')}>
+                  JavaScript
                 </NavDropdown.Item>
                
                 {/* <NavDropdown.Item href="#action/3.4" className='droplink'onClick={handellanguage1}>
                 JavaScript
                 </NavDropdown.Item> */}
-                <NavDropdown.Item href="#action/3.4" className='droplink'  onClick={() => handleLanguage('ts', 'TypeScript')}>
+                <NavDropdown.Item href="#action/3.4" className='droplink'  onClick={() => handleLanguage('ts', 'TypeScript',"typescript")}>
                 TypeScript
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.4" className='droplink'  onClick={() => handleLanguage('cpp', 'C++')}>
+                <NavDropdown.Item href="#action/3.4" className='droplink'  onClick={() => handleLanguage('cpp', 'C++','cpp')}>
                   C++
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.4" className='droplink'  onClick={() => handleLanguage('java', 'Java')}>
+                <NavDropdown.Item href="#action/3.4" className='droplink'  onClick={() => handleLanguage('java', 'Java',"java")}>
                 Java
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.4" className='droplink'  onClick={() => handleLanguage('csharp', 'C#')}>
+                <NavDropdown.Item href="#action/3.4" className='droplink'  onClick={() => handleLanguage('csharp', 'C#',"csharp")}>
                   C#
                 </NavDropdown.Item>
                 {/* <NavDropdown.Item href="#action/3.4" className='droplink' onClick={()=>{setlinks('c')}}>
